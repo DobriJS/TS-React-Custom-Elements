@@ -12,9 +12,15 @@ interface Items {
 }
 
 const Accordion: React.FC<Items> = ({ items }) => {
-  const [expandedIndex, setExpandedIndex] = useState<number>(0);
+  const [expandedIndex, setExpandedIndex] = useState<number>(-1);
 
-  const handleClick = (nextIndex: number) => setExpandedIndex(nextIndex);
+  const handleClick = (nextIndex: number) => {
+    if (nextIndex === expandedIndex) {
+      setExpandedIndex(-1);
+    } else {
+      setExpandedIndex(nextIndex);
+    }
+  };
 
   const renderedItems = items.map((item, index) => {
     const isExpanded = index === expandedIndex;
