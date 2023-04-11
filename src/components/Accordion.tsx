@@ -1,15 +1,6 @@
 import { useState } from 'react';
 import { GoChevronDown, GoChevronLeft } from 'react-icons/go';
-
-interface Item {
-  id: string;
-  label: string;
-  content: string;
-}
-
-interface Items {
-  items: Item[];
-}
+import { Items } from '../interfaces/index';
 
 const Accordion: React.FC<Items> = ({ items }) => {
   const [expandedIndex, setExpandedIndex] = useState<number>(-1);
