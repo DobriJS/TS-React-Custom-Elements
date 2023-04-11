@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 interface Item {
   id: string;
   label: string;
@@ -9,11 +11,17 @@ interface Items {
 }
 
 const Accordion: React.FC<Items> = ({ items }) => {
-  const renderedItems = items.map((item) => {
+  const [expandedIndex, setExpandedIndex] = useState<number>(0);
+
+  const handleClick = (nextIndex: number) => setExpandedIndex(nextIndex);
+
+  const renderedItems = items.map((item, index) => {
+    const isExpanded = index === expandedIndex;
+
     return (
       <div key={item.id}>
-        <div>{item.label}</div>
-        <div>{item.content}</div>
+        <div onClick={() => handleClick(index)}>{item.label}</div>
+        {isExpanded && <div>{item.content}</div>}
       </div>
     );
   });
