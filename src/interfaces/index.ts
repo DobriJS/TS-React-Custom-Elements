@@ -15,6 +15,6 @@ export interface DropdownOption {
 
 export interface DropdownOptions {
     options: DropdownOption[];
-    selection: DropdownOption | null;
-    onSelect: (option: DropdownOption) => void;
+    value: DropdownOption | null;
+    onChange: (option: DropdownOption) => void;
 }
