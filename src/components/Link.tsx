@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import React, { ReactNode } from 'react';
 import NavigationContext from '../context/NavigationContext';
 
@@ -9,6 +10,8 @@ interface LinkProps {
 const Link: React.FC<LinkProps> = ({ to, children }) => {
   const { navigate } = React.useContext(NavigationContext);
 
+  const classes = classNames('text-blue-500');
+
   const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     if (event.metaKey || event.ctrlKey) {
       return;
@@ -18,7 +21,7 @@ const Link: React.FC<LinkProps> = ({ to, children }) => {
   };
 
   return (
-    <a href={to} onClick={handleClick}>
+    <a className={classes} href={to} onClick={handleClick}>
       {children}
     </a>
   );
