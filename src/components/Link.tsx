@@ -10,6 +10,9 @@ const Link: React.FC<LinkProps> = ({ to, children }) => {
   const { navigate } = React.useContext(NavigationContext);
 
   const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    if (event.metaKey || event.ctrlKey) {
+      return;
+    }
     event.preventDefault();
     navigate(to);
   };
