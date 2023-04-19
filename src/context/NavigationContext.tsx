@@ -5,27 +5,31 @@ interface NavigationContextProps {
   navigate: (to: string) => void;
 }
 
-const NavigationContext = createContext({} as NavigationContextProps);
+const NavigationContext = createContext({
+  currentPath: '',
+  navigate: (to: string) => window.history.pushState({}, '', to)
+} as NavigationContextProps);
 
 function NavigationProvider({ children }: { children: ReactNode }) {
-  const [currentPath, setCurrentPath] = useState<string>(window.location.pathname);
+  const [currentPath, setCurrentPath] = useState(window.location.pathname);
 
   useEffect(() => {
     const handler = () => {
       setCurrentPath(window.location.pathname);
     };
     window.addEventListener('popstate', handler);
-    return () => window.removeEventListener('popstate', handler);
+    return () => {
+      window.removeEventListener('popstate', handler);
+    };
   }, []);
 
-  const navigate = (to: string) => {
+  const navigate = (to: any) => {
     window.history.pushState({}, '', to);
     setCurrentPath(to);
   };
 
   return (
     <NavigationContext.Provider value={{ currentPath, navigate }}>
-      {currentPath}
       {children}
     </NavigationContext.Provider>
   );
