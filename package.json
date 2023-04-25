@@ -9,7 +9,6 @@
     "@types/node": "^18.15.11",
     "@types/react": "^18.0.33",
     "@types/react-dom": "^18.0.11",
-    "faker": "^6.6.6",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -44,7 +43,7 @@
     ]
   },
   "devDependencies": {
-    "@types/faker": "^6.6.9",
+    "@faker-js/faker": "^7.6.0",
     "@types/jest": "^29.5.1",
     "@types/lodash": "^4.14.194",
     "autoprefixer": "^10.4.14",
