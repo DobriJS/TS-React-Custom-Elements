@@ -1,15 +1,5 @@
 import { createContext } from 'react';
-
-export interface Message {
-  message: string;
-  priority: Priority;
-}
-
-export enum Priority {
-  Error,
-  Warn,
-  Info
-}
+import { Message } from '../types/Message';
 
 export type ErrorLoggerContextState = {
   messages: Message[];

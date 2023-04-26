@@ -1,7 +1,9 @@
 import { useContext, useEffect } from 'react';
-import { ErrorLoggerContext, Message } from '../../context/logger-context';
-import generateMessage, { Priority } from '../../api';
+import { ErrorLoggerContext } from '../../context/logger-context';
+import generateMessage from '../../api';
 import TileList from './TileList';
+import { Priority } from '../../types/Priority';
+import { Message } from '../../types/Message';
 
 const TileManager: React.FC = () => {
   const { messages, isRunning, addMessage, removeMessage } = useContext(ErrorLoggerContext);

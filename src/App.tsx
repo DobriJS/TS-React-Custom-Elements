@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Dashboard from './pages/Dashboard';
-import { ErrorLoggerContext, Message } from './context/logger-context';
+import { ErrorLoggerContext } from './context/logger-context';
+import { Message } from './types/Message';
 
 const App: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([]);

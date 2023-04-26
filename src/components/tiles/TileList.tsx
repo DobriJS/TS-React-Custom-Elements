@@ -1,4 +1,5 @@
-import { Message, Priority } from '../../context/logger-context';
+import { Message } from '../../types/Message';
+import { Priority } from '../../types/Priority';
 import { TileListProps } from '../../types/TileListProps';
 import TileListItem from './TileListItem';
 
