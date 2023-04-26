@@ -1,4 +1,4 @@
-import { Message } from "../context/logger-context";
+import { Message } from "./Message";
 
 export type TileListProps = {
     messages: Message[];
