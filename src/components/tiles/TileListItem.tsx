@@ -1,9 +1,4 @@
-import { Message } from '../../context/logger-context';
-
-type TileListItemProps = {
-  message: Message;
-  removeMessage: (message: Message) => void;
-};
+import { TileListItemProps } from '../../types/TileListItem';
 
 const TileListItem: React.FC<TileListItemProps> = ({ message, removeMessage }) => {
   return (

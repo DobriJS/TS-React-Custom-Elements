@@ -1,11 +1,6 @@
 import { Message, Priority } from '../../context/logger-context';
+import { TileListProps } from '../../types/TileListProps';
 import TileListItem from './TileListItem';
-
-type TileListProps = {
-  messages: Message[];
-  type: number;
-  removeMessage: (message: Message) => void;
-};
 
 const TileList: React.FC<TileListProps> = ({ messages, type, removeMessage }) => {
   const getClassType = (index: number) => {
