@@ -30,4 +30,11 @@ The project consists of several files, including:
 - App.tsx: This file contains the App component that renders the Tile Manager UI. It receives the message list as a prop and updates it using the addMessage function.
 - TileList.tsx: This file contains the TileList component that renders the list of tiles. It receives the message list as a prop and maps each message to a TileListItem component.
 
+### Functions
+The project uses several functions to manage and display messages, including:
+- generateMessage: Generates messages with random priorities and intervals using the message generator function.
+- addMessage: Adds a message to the message list.
+- removeMessage: Removes a message from the message list.
+- getClassType: Return the CSS class name for a tile based on its priority.
 
+### LIVE Example !
