@@ -10,13 +10,14 @@ type TileListProps = {
 const TileList: React.FC<TileListProps> = ({ messages, type, removeMessage }) => {
   const getClassType = (index: number) => {
     if (Priority.Error === index) {
-      return 'bg-error p-2 m-1';
+      return 'rounded-md shadow-xl bg-red-600 p-2 m-1';
     } else if (Priority.Warn === index) {
-      return 'bg-warn p-2 m-1';
+      return 'rounded-md shadow-xl bg-yellow-300 p-2 m-1';
     } else if (Priority.Info === index) {
-      return 'bg-info p-2 m-1';
+      return 'rounded-md shadow-xl bg-green-500 p-2 m-1';
     }
   };
+
   const getLabel = (index: number) => {
     if (Priority.Error === index) {
       return 'Error';
