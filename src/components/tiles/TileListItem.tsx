@@ -5,7 +5,7 @@ const TileListItem: React.FC<TileListItemProps> = ({ message, removeMessage }) =
     <>
       <span>{message.message}</span>
       <button
-        className='rounded-md mt-2 mb-1 text-center bg-blue-400 px-4 w-full'
+        className='rounded-md mt-2 mb-1 text-center bg-white px-4 w-full'
         data-testid='remove'
         onClick={() => removeMessage(message)}
       >
